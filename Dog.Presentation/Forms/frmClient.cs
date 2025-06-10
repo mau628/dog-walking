@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using Dog.Core.Services.Interfaces;
 using Dog.Domain;
 using Dog.Domain.Models;
-using XPTable.Models;
 
 public partial class frmClient : Form, IBaseForm
 {
@@ -49,23 +48,17 @@ public partial class frmClient : Form, IBaseForm
 
   private void BindData()
   {
-    txtName.DataBindings.Add("Text", _client, nameof(_client.Name), true, DataSourceUpdateMode.OnPropertyChanged);
-    txtEmail.DataBindings.Add("Text", _client, nameof(_client.Email), true, DataSourceUpdateMode.OnPropertyChanged);
-    txtPhone.DataBindings.Add("Text", _client, nameof(_client.PhoneNumber), true, DataSourceUpdateMode.OnPropertyChanged);
+    txtName.BindData(_client, nameof(_client.Name));
+    txtEmail.BindData(_client, nameof(_client.Email));
+    txtPhone.BindData(_client, nameof(_client.PhoneNumber));
 
-    var columnModel = new ColumnModel();
-    var tableModel = new TableModel();
-
-    tblDogs.ColumnModel = columnModel;
-    tblDogs.TableModel = tableModel;
-    columnModel.Columns.Add(new TextColumn("Name"));
-    columnModel.Columns.Add(new TextColumn("Breed"));
-    foreach (var dog in _client.Dogs)
-    {
-      var row = new Row();
-      row.Cells.Add(new Cell(dog.Name));
-      row.Cells.Add(new Cell(dog.Breed));
-      tableModel.Rows.Add(row);
-    }
+    tblDogs.BindData(
+      _clientService.GetDogsByClientId(_client.Id),
+      new Dictionary<string, string>
+      {
+        { nameof(Dog.Name), "Name" },
+        { nameof(Dog.Breed), "Breed" }
+      }
+    );
   }
 }
