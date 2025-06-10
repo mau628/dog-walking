@@ -20,14 +20,14 @@ public partial class frmClient : Form, IBaseForm
     _dogRepository = dogRepository;
   }
 
-  public void ShowForm(IWin32Window? owner, params object[] args)
+  public void ShowForm(object owner, params object[] args)
   {
     var idParam = args.FirstOrDefault()?.ToString();
     Guid.TryParse(idParam, out var id);
     _client = _clientRepository.Find(id) ?? new Client();
 
     BindData();
-    this.ShowDialog(owner);
+    this.ShowDialog(owner as IWin32Window);
   }
 
   private void btnCancel_Click(object sender, EventArgs e)

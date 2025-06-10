@@ -1,6 +1,6 @@
 ﻿namespace Dog.Infrastructure.DataStore.Repositories;
 
-public class Repository<TEntity> : Domain.IRepository<TEntity> where TEntity : Domain.BaseEntity
+internal class Repository<TEntity> : Domain.IRepository<TEntity> where TEntity : Domain.BaseEntity
 {
   private readonly DogContext _context;
   public Repository(DogContext context)

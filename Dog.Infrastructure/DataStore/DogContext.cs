@@ -3,7 +3,7 @@
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-public class DogContext : DbContext
+internal class DogContext : DbContext
 {
   public DbSet<Dog> Dogs { get; set; }
   public DbSet<Client> Clients { get; set; }
