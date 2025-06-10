@@ -28,6 +28,8 @@
     /// </summary>
     private void InitializeComponent()
     {
+      XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder2 = new XPTable.Models.DataSourceColumnBinder();
+      XPTable.Renderers.DragDropRenderer dragDropRenderer2 = new XPTable.Renderers.DragDropRenderer();
       txtName = new TextBox();
       label1 = new Label();
       label2 = new Label();
@@ -36,6 +38,9 @@
       txtEmail = new TextBox();
       btnSave = new Button();
       btnCancel = new Button();
+      tblDogs = new XPTable.Models.Table();
+      label4 = new Label();
+      ((System.ComponentModel.ISupportInitialize)tblDogs).BeginInit();
       SuspendLayout();
       // 
       // txtName
@@ -106,6 +111,30 @@
       btnCancel.UseVisualStyleBackColor = true;
       btnCancel.Click += btnCancel_Click;
       // 
+      // tblDogs
+      // 
+      tblDogs.BorderColor = Color.Black;
+      tblDogs.DataMember = null;
+      tblDogs.DataSourceColumnBinder = dataSourceColumnBinder2;
+      dragDropRenderer2.ForeColor = Color.Red;
+      tblDogs.DragDropRenderer = dragDropRenderer2;
+      tblDogs.GridLinesContrainedToData = false;
+      tblDogs.Location = new Point(12, 91);
+      tblDogs.Name = "tblDogs";
+      tblDogs.Size = new Size(426, 150);
+      tblDogs.TabIndex = 8;
+      tblDogs.Text = "table1";
+      tblDogs.UnfocusedBorderColor = Color.Black;
+      // 
+      // label4
+      // 
+      label4.AutoSize = true;
+      label4.Location = new Point(12, 73);
+      label4.Name = "label4";
+      label4.Size = new Size(75, 15);
+      label4.TabIndex = 9;
+      label4.Text = "Owned Dogs";
+      // 
       // frmClient
       // 
       AcceptButton = btnSave;
@@ -113,6 +142,8 @@
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(450, 357);
       ControlBox = false;
+      Controls.Add(label4);
+      Controls.Add(tblDogs);
       Controls.Add(btnCancel);
       Controls.Add(btnSave);
       Controls.Add(label3);
@@ -126,6 +157,7 @@
       ShowInTaskbar = false;
       StartPosition = FormStartPosition.CenterParent;
       Text = "Client";
+      ((System.ComponentModel.ISupportInitialize)tblDogs).EndInit();
       ResumeLayout(false);
       PerformLayout();
     }
@@ -140,5 +172,7 @@
     private TextBox txtEmail;
     private Button btnSave;
     private Button btnCancel;
+    private XPTable.Models.Table tblDogs;
+    private Label label4;
   }
 }

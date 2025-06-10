@@ -47,7 +47,7 @@ public class Repository<TEntity> : Domain.IRepository<TEntity> where TEntity : D
   {
     if (id == default)
     {
-      throw new ArgumentOutOfRangeException(nameof(id), "ID cannot be default value");
+      return null;
     }
 
     return _context.Set<TEntity>().Find(id);

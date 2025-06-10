@@ -5,5 +5,5 @@ public class Dog : BaseEntity
   public string Breed { get; set; } = string.Empty;
   public DateTime DateOfBirth { get; set; }
   public virtual Client Owner { get; set; } = new Client();
-  public ICollection<Walk> Walks { get; set; } = new List<Walk>();
+  public virtual ICollection<Walk> Walks { get; set; } = new List<Walk>();
 }

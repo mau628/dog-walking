@@ -3,6 +3,7 @@
 using System.Windows.Forms;
 using Dog.Domain;
 using Dog.Domain.Models;
+using XPTable.Models;
 
 public partial class frmClient : Form, IBaseForm
 {
@@ -21,14 +22,11 @@ public partial class frmClient : Form, IBaseForm
 
   public void ShowForm(IWin32Window? owner, params object[] args)
   {
+    var idParam = args.FirstOrDefault()?.ToString();
+    Guid.TryParse(idParam, out var id);
+    _client = _clientRepository.Find(id) ?? new Client();
+
     BindData();
-
-    var clientId = Guid.Parse(args[0]?.ToString() ?? string.Empty);
-    if (clientId != default)
-    {
-      _client = _clientRepository.Find(clientId) ?? new Client();
-    }
-
     this.ShowDialog(owner);
   }
 
@@ -55,5 +53,20 @@ public partial class frmClient : Form, IBaseForm
     txtName.DataBindings.Add("Text", _client, nameof(_client.Name), true, DataSourceUpdateMode.OnPropertyChanged);
     txtEmail.DataBindings.Add("Text", _client, nameof(_client.Email), true, DataSourceUpdateMode.OnPropertyChanged);
     txtPhone.DataBindings.Add("Text", _client, nameof(_client.PhoneNumber), true, DataSourceUpdateMode.OnPropertyChanged);
+
+    var columnModel = new ColumnModel();
+    var tableModel = new TableModel();
+
+    tblDogs.ColumnModel = columnModel;
+    tblDogs.TableModel = tableModel;
+    columnModel.Columns.Add(new TextColumn("Name"));
+    columnModel.Columns.Add(new TextColumn("Breed"));
+    foreach (var dog in _client.Dogs)
+    {
+      var row = new Row();
+      row.Cells.Add(new Cell(dog.Name));
+      row.Cells.Add(new Cell(dog.Breed));
+      tableModel.Rows.Add(row);
+    }
   }
 }
