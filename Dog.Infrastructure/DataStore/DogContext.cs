@@ -29,6 +29,5 @@ internal class DogContext : DbContext
 
   protected override void OnConfiguring(DbContextOptionsBuilder options)
        => options
-        .UseLazyLoadingProxies()
         .UseSqlite($"Data Source={DbPath}");
 }

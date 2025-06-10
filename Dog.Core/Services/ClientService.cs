@@ -7,20 +7,30 @@ namespace Dog.Core.Services;
 public class ClientService : IClientService
 {
   private readonly IRepository<Client> _clientRepository;
+  private readonly IRepository<Domain.Models.Dog> _dogRepository;
   private IValidator<Client> _validator;
 
   public ClientService(
     IRepository<Client> clientRepository,
+    IRepository<Domain.Models.Dog> dogRepository,
     IValidator<Client> validator
   )
   {
     _clientRepository = clientRepository;
+    _dogRepository = dogRepository;
     _validator = validator;
   }
 
   public Client? GetClientOrDefault(Guid id)
   {
     return _clientRepository.Find(id) ?? new Client();
+  }
+
+  public List<Domain.Models.Dog> GetDogsByClientId(Guid clientId)
+  {
+    return _dogRepository
+      .Filter(c => c.Owner.Id == clientId)
+      .ToList();
   }
 
   public void Upsert(Client client)

@@ -13,7 +13,7 @@ namespace Dog.Presentation.Forms
 
     private void btnClients_Click(object sender, EventArgs e)
     {
-      _formFactory.Create<frmClient>().ShowForm(this, "152BB7B9-49F9-416D-B538-939F680A6BB6");
+      _formFactory.Create<frmClient>().ShowForm(this);
     }
 
 

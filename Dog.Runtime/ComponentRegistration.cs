@@ -1,6 +1,7 @@
 ﻿namespace Dog.Runtime;
 
 using System.Linq;
+using Dog.Core;
 using Dog.Domain;
 using Dog.Infrastructure.DataStore;
 using Dog.Presentation.Forms;
@@ -14,9 +15,9 @@ internal static class ComponentRegistration
     return Host.CreateDefaultBuilder()
         .ConfigureServices((context, services) =>
         {
-          services.AddScoped<IFormFactory, FormFactory>();
           services.AddDataStore();
-
+          services.AddDogServices();
+          services.AddScoped<IFormFactory, FormFactory>();
           //Add all forms
           var forms = typeof(frmMain).Assembly
             .GetTypes()
