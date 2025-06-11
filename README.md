@@ -38,7 +38,7 @@ Create a Windows Forms application to manage client and dog information for a do
 * ✅ Complete as many of the features as possible in the timeframe. There is no requirement to finish ALL features / optional items. It is better to focus on quality code and implementation than rushing and completing all items.
 * ✅ Use AI! If you need to, use AI to help you with specific areas. Keep in mind that AI doesn’t always produce the best results, and we wouldn’t expect the entire solution to be solely from AI.
 * ⏳ Include unit tests to verify the functionality of your code.
-* ⏳ Document your code thoroughly to make it easier for others to understand and maintain.
+* ✅ Document your code thoroughly to make it easier for others to understand and maintain.
 * ✅ Feel free to add any other features that are not on this list if you believe they will help or are useful.
 
 ## Run the Application:
