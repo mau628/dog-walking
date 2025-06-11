@@ -17,7 +17,7 @@ internal class Repository<T> : Domain.IRepository<T> where T : Domain.BaseEntity
       throw new ArgumentNullException(nameof(entity), "Entity cannot be null");
     }
     entity.Id = new Guid();
-    entity.CreatedAt = DateTime.UtcNow;
+    entity.CreatedAt = DateTime.Now;
 
     var result = _context.Set<T>().Add(entity);
     _context.SaveChanges();

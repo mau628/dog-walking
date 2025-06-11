@@ -10,16 +10,19 @@ public partial class frmDog : Form, IBaseForm
   private Dog _dog = new();
   private readonly IDataService<Dog> _dogService;
   private readonly IDataService<Client> _clientService;
+  private IFormFactory _formFactory;
   private bool _result;
 
   public frmDog(
     IDataService<Dog> dogService,
-    IDataService<Client> clientService
+    IDataService<Client> clientService,
+    IFormFactory formFactory
   )
   {
     InitializeComponent();
     _dogService = dogService;
     _clientService = clientService;
+    _formFactory = formFactory;
   }
 
   public bool ShowForm(object owner, params object[] args)
@@ -27,9 +30,8 @@ public partial class frmDog : Form, IBaseForm
     _result = false;
     var idParam = args.FirstOrDefault()?.ToString();
     Guid.TryParse(idParam, out var id);
-    _dog = _dogService.GetEntityOrDefault(id);
+    BindData(id);
 
-    BindData();
     this.btnClear.Enabled = _dog.Id == default;
     this.btnDelete.Enabled = _dog.Id != default;
     this.ShowDialog(owner as IWin32Window);
@@ -58,8 +60,10 @@ public partial class frmDog : Form, IBaseForm
     this.Close();
   }
 
-  private void BindData()
+  private void BindData(Guid id)
   {
+    _dog = _dogService.GetEntityOrDefault(id);
+
     cmbOwner.DataSource = _clientService.GetFiltered(c => true).ToList();
     cmbOwner.DisplayMember = nameof(Client.Name);
     cmbOwner.ValueMember = nameof(Client.Id);
@@ -77,8 +81,10 @@ public partial class frmDog : Form, IBaseForm
       _dog.Walks,
       new Dictionary<string, string>
       {
-        { nameof(Dog.Name), "Date" },
-        { nameof(Dog.Breed), "Duration" }
+        { nameof(Walk.Id), "ID" },
+        { nameof(Walk.Date), "Date" },
+        { nameof(Walk.DurationInMinutes), "Duration" },
+        { nameof(Walk.Notes), "Notes" }
       }
     );
   }
@@ -99,5 +105,10 @@ public partial class frmDog : Form, IBaseForm
     }
     _dogService.Delete(_dog.Id);
     this.Close();
+  }
+
+  private void btnWalks_Click(object sender, EventArgs e)
+  {
+    _formFactory.Create<frmWalk>().ShowForm(this);
   }
 }

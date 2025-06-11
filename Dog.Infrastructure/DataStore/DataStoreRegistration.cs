@@ -9,8 +9,8 @@ public static class DataStoreRegistration
   public static void AddDataStore(this IServiceCollection services)
   {
     services.AddDbContext<DogContext>();
-    services.AddRepository<Domain.Models.Dog>();
     services.AddRepository<Domain.Models.Client>();
+    services.AddRepository<Domain.Models.Dog>();
     services.AddRepository<Domain.Models.Walk>();
   }
 

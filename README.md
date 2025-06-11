@@ -1,3 +1,49 @@
-* Add Migration
-	* Navigate to codebase root path.	* Run: `dotnet ef migrations add <migration-name> --project Dog.Infrastructure -o DataStore/Migrations`
-	* Run: `dotnet ef database update --project Dog.Infrastructure`
+## Requirements:
+1. Form Design:
+    * Include fields for client name, phone number, dog name, breed, age, walk date, and duration.
+    * Add buttons for saving, clearing, deleting, and exiting.
+2. Functionality:
+    * Implement validation for relevant fields.
+    * Ensure the save button stores the information and displays a confirmation message. ✅
+    * Delete should remove the item ✅
+    * Clear button should reset all fields. ✅
+    * Exit button should close the application.
+2. Data Persistence:
+    * Save the data entered to a file, physical or in-memory database so that it remains available even after the application is closed and reopened. ✅
+    * Set up a README file in your GitHub repo with instructions on how to run the application. ✅
+4. Useful Features:
+    * Include an area to retrieve saved entries.
+    * Implement search functionality to find specific entries.
+    * Include error handling for unexpected inputs.
+    * Have a login flow
+    * Allow for adding a dog walk for a client that records information about the event
+    * Use validation messages where appropriate
+
+## Pre-requirements:
+  * Visual Studio
+  * Microsoft SQL Server (or similar for data persistence / binding)
+  * GitHub account (or similar)
+
+## Instructions:
+* Read the above requirements carefully
+* Create a GitHub repo that can be accessed by us. “Commit early, commit often”
+* Complete as many of the features as possible in the timeframe. There is no requirement to finish ALL features / optional items. It is better to focus on quality code and implementation than rushing and completing all items.
+* Use AI! If you need to, use AI to help you with specific areas. Keep in mind that AI doesn’t always produce the best results, and we wouldn’t expect the entire solution to be solely from AI.
+* Include unit tests to verify the functionality of your code.
+* Document your code thoroughly to make it easier for others to understand and maintain.
+* Feel free to add any other features that are not on this list if you believe they will help or are useful.
+
+## Migrations
+To Add a Migration:
+* Navigate to codebase root path.
+* Run: `dotnet ef migrations add <migration-name> --project Dog.Infrastructure -o DataStore/Migrations`
+
+To update the database the first time:
+* Navigate to codebase root path.
+* Run: `dotnet ef database update --project Dog.Infrastructure`
+
+## TODO's
+* Refactor the grids to refresh on data change.
+* When adding a new dog, the Dog form should already have the current Owner selected.
+* Add pagination to the grids.
+* Add a search bar to the grids.

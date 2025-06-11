@@ -27,11 +27,11 @@ public partial class frmClient : Form, IBaseForm
     _result = false;
     var idParam = args.FirstOrDefault()?.ToString();
     Guid.TryParse(idParam, out var id);
-    _client = _clientService.GetEntityOrDefault(id);
+    BindData(id);
 
-    BindData();
     this.btnClear.Enabled = _client.Id == default;
     this.btnDelete.Enabled = _client.Id != default;
+    this.btnDogs.Enabled = _client.Id != default;
     this.ShowDialog(owner as IWin32Window);
     return _result;
   }
@@ -57,8 +57,10 @@ public partial class frmClient : Form, IBaseForm
     this.Close();
   }
 
-  private void BindData()
+  private void BindData(Guid id)
   {
+    _client = _clientService.GetEntityOrDefault(id);
+
     txtName.BindData(_client, nameof(_client.Name));
     txtEmail.BindData(_client, nameof(_client.Email));
     txtPhone.BindData(_client, nameof(_client.PhoneNumber));
@@ -98,11 +100,17 @@ public partial class frmClient : Form, IBaseForm
     if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
         e.RowIndex >= 0)
     {
-      var id = dgvDogs.Rows[e.RowIndex].Cells[nameof(Dog.Id)].Value;
+      Guid.TryParse(dgvDogs.Rows[e.RowIndex].Cells[nameof(Dog.Id)].Value.ToString(), out var id);
+
       if (_formFactory.Create<frmDog>().ShowForm(this, id))
       {
-        BindData();
+        BindData(id);
       }
     }
+  }
+
+  private void btnDogs_Click(object sender, EventArgs e)
+  {
+    _formFactory.Create<frmDog>().ShowForm(this);
   }
 }

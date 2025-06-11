@@ -68,11 +68,18 @@ public static class ControlsExtensions
   {
     textBox.DataBindings.Clear();
     textBox.DataBindings.Add("Value", dataSource, propertyName, false, updateMode);
+    textBox.Format = DateTimePickerFormat.Short;
   }
 
   public static void BindData(this ComboBox comboBox, object dataSource, string propertyName, DataSourceUpdateMode updateMode = DataSourceUpdateMode.OnPropertyChanged)
   {
     comboBox.DataBindings.Clear();
     comboBox.DataBindings.Add("SelectedValue", dataSource, propertyName, false, updateMode);
+  }
+
+  public static void BindData(this NumericUpDown numericUpDown, object dataSource, string propertyName, DataSourceUpdateMode updateMode = DataSourceUpdateMode.OnPropertyChanged)
+  {
+    numericUpDown.DataBindings.Clear();
+    numericUpDown.DataBindings.Add("Value", dataSource, propertyName, false, updateMode);
   }
 }

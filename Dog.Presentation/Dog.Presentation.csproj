@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Forms\frmWalk.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\frmDog.cs">
       <SubType>Form</SubType>
     </Compile>

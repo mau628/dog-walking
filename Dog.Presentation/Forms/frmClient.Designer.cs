@@ -40,6 +40,7 @@
       btnClear = new Button();
       btnDelete = new Button();
       dgvDogs = new DataGridView();
+      btnDogs = new Button();
       ((System.ComponentModel.ISupportInitialize)dgvDogs).BeginInit();
       SuspendLayout();
       // 
@@ -94,7 +95,7 @@
       // btnSave
       // 
       btnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-      btnSave.Location = new Point(66, 273);
+      btnSave.Location = new Point(66, 320);
       btnSave.Name = "btnSave";
       btnSave.Size = new Size(75, 23);
       btnSave.TabIndex = 6;
@@ -105,7 +106,7 @@
       // btnCancel
       // 
       btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-      btnCancel.Location = new Point(309, 273);
+      btnCancel.Location = new Point(309, 320);
       btnCancel.Name = "btnCancel";
       btnCancel.Size = new Size(75, 23);
       btnCancel.TabIndex = 9;
@@ -125,7 +126,7 @@
       // btnClear
       // 
       btnClear.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-      btnClear.Location = new Point(147, 273);
+      btnClear.Location = new Point(147, 320);
       btnClear.Name = "btnClear";
       btnClear.Size = new Size(75, 23);
       btnClear.TabIndex = 7;
@@ -136,7 +137,7 @@
       // btnDelete
       // 
       btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-      btnDelete.Location = new Point(228, 273);
+      btnDelete.Location = new Point(228, 320);
       btnDelete.Name = "btnDelete";
       btnDelete.Size = new Size(75, 23);
       btnDelete.TabIndex = 8;
@@ -153,13 +154,24 @@
       dgvDogs.TabIndex = 10;
       dgvDogs.CellContentClick += dgvDogs_CellContentClick;
       // 
+      // btnDogs
+      // 
+      btnDogs.Location = new Point(12, 273);
+      btnDogs.Name = "btnDogs";
+      btnDogs.Size = new Size(102, 23);
+      btnDogs.TabIndex = 11;
+      btnDogs.Text = "Add Dog...";
+      btnDogs.UseVisualStyleBackColor = true;
+      btnDogs.Click += btnDogs_Click;
+      // 
       // frmClient
       // 
       AcceptButton = btnSave;
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(450, 305);
+      ClientSize = new Size(450, 352);
       ControlBox = false;
+      Controls.Add(btnDogs);
       Controls.Add(dgvDogs);
       Controls.Add(btnDelete);
       Controls.Add(btnClear);
@@ -196,5 +208,6 @@
     private Button btnClear;
     private Button btnDelete;
     private DataGridView dgvDogs;
+    private Button btnDogs;
   }
 }

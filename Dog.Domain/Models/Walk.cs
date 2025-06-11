@@ -2,8 +2,8 @@
 
 public class Walk : BaseEntity
 {
-  public DateTime Date { get; set; }
-  public TimeSpan Duration { get; set; }
+  public DateTime Date { get; set; } = DateTime.Now.Date;
+  public int DurationInMinutes { get; set; }
   public virtual Dog Dog { get; set; } = new Dog();
   public string Notes { get; set; } = string.Empty;
 }

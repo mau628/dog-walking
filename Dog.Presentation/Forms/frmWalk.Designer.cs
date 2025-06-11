@@ -1,6 +1,6 @@
 ﻿namespace Dog.Presentation.Forms
 {
-  partial class frmDog
+  partial class frmWalk
   {
     /// <summary>
     /// Required designer variable.
@@ -28,69 +28,52 @@
     /// </summary>
     private void InitializeComponent()
     {
-      txtName = new TextBox();
+      txtNotes = new TextBox();
       label1 = new Label();
-      label2 = new Label();
-      txtBreed = new TextBox();
       label3 = new Label();
       btnSave = new Button();
       btnCancel = new Button();
-      label4 = new Label();
       btnClear = new Button();
       btnDelete = new Button();
-      dtpDOB = new DateTimePicker();
-      cmbOwner = new ComboBox();
+      dtpWalkDate = new DateTimePicker();
+      cmbDog = new ComboBox();
       label5 = new Label();
-      dgvWalks = new DataGridView();
-      btnWalks = new Button();
-      ((System.ComponentModel.ISupportInitialize)dgvWalks).BeginInit();
+      label4 = new Label();
+      label2 = new Label();
+      nudDuration = new NumericUpDown();
+      ((System.ComponentModel.ISupportInitialize)nudDuration).BeginInit();
       SuspendLayout();
       // 
-      // txtName
+      // txtNotes
       // 
-      txtName.Location = new Point(56, 6);
-      txtName.Name = "txtName";
-      txtName.Size = new Size(382, 23);
-      txtName.TabIndex = 0;
+      txtNotes.Location = new Point(64, 99);
+      txtNotes.Multiline = true;
+      txtNotes.Name = "txtNotes";
+      txtNotes.Size = new Size(374, 46);
+      txtNotes.TabIndex = 0;
       // 
       // label1
       // 
       label1.AutoSize = true;
-      label1.Location = new Point(9, 9);
+      label1.Location = new Point(20, 102);
       label1.Name = "label1";
-      label1.Size = new Size(39, 15);
+      label1.Size = new Size(38, 15);
       label1.TabIndex = 1;
-      label1.Text = "Name";
-      // 
-      // label2
-      // 
-      label2.AutoSize = true;
-      label2.Location = new Point(9, 38);
-      label2.Name = "label2";
-      label2.Size = new Size(37, 15);
-      label2.TabIndex = 3;
-      label2.Text = "Breed";
-      // 
-      // txtBreed
-      // 
-      txtBreed.Location = new Point(56, 35);
-      txtBreed.Name = "txtBreed";
-      txtBreed.Size = new Size(100, 23);
-      txtBreed.TabIndex = 2;
+      label1.Text = "Notes";
       // 
       // label3
       // 
       label3.AutoSize = true;
-      label3.Location = new Point(162, 38);
+      label3.Location = new Point(27, 47);
       label3.Name = "label3";
       label3.Size = new Size(31, 15);
       label3.TabIndex = 5;
-      label3.Text = "DOB";
+      label3.Text = "Date";
       // 
       // btnSave
       // 
       btnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-      btnSave.Location = new Point(63, 302);
+      btnSave.Location = new Point(63, 161);
       btnSave.Name = "btnSave";
       btnSave.Size = new Size(75, 23);
       btnSave.TabIndex = 6;
@@ -101,7 +84,7 @@
       // btnCancel
       // 
       btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-      btnCancel.Location = new Point(306, 302);
+      btnCancel.Location = new Point(306, 161);
       btnCancel.Name = "btnCancel";
       btnCancel.Size = new Size(75, 23);
       btnCancel.TabIndex = 9;
@@ -109,19 +92,10 @@
       btnCancel.UseVisualStyleBackColor = true;
       btnCancel.Click += btnCancel_Click;
       // 
-      // label4
-      // 
-      label4.AutoSize = true;
-      label4.Location = new Point(9, 95);
-      label4.Name = "label4";
-      label4.Size = new Size(38, 15);
-      label4.TabIndex = 9;
-      label4.Text = "Walks";
-      // 
       // btnClear
       // 
       btnClear.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-      btnClear.Location = new Point(144, 302);
+      btnClear.Location = new Point(144, 161);
       btnClear.Name = "btnClear";
       btnClear.Size = new Size(75, 23);
       btnClear.TabIndex = 7;
@@ -132,7 +106,7 @@
       // btnDelete
       // 
       btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-      btnDelete.Location = new Point(225, 302);
+      btnDelete.Location = new Point(225, 161);
       btnDelete.Name = "btnDelete";
       btnDelete.Size = new Size(75, 23);
       btnDelete.TabIndex = 8;
@@ -140,98 +114,100 @@
       btnDelete.UseVisualStyleBackColor = true;
       btnDelete.Click += btnDelete_Click;
       // 
-      // dtpDOB
+      // dtpWalkDate
       // 
-      dtpDOB.Format = DateTimePickerFormat.Short;
-      dtpDOB.Location = new Point(199, 35);
-      dtpDOB.Name = "dtpDOB";
-      dtpDOB.Size = new Size(239, 23);
-      dtpDOB.TabIndex = 11;
+      dtpWalkDate.Location = new Point(64, 41);
+      dtpWalkDate.Name = "dtpWalkDate";
+      dtpWalkDate.Size = new Size(239, 23);
+      dtpWalkDate.TabIndex = 11;
       // 
-      // cmbOwner
+      // cmbDog
       // 
-      cmbOwner.DropDownStyle = ComboBoxStyle.DropDownList;
-      cmbOwner.FormattingEnabled = true;
-      cmbOwner.Location = new Point(56, 64);
-      cmbOwner.Name = "cmbOwner";
-      cmbOwner.Size = new Size(382, 23);
-      cmbOwner.TabIndex = 12;
+      cmbDog.DropDownStyle = ComboBoxStyle.DropDownList;
+      cmbDog.FormattingEnabled = true;
+      cmbDog.Location = new Point(64, 12);
+      cmbDog.Name = "cmbDog";
+      cmbDog.Size = new Size(374, 23);
+      cmbDog.TabIndex = 12;
       // 
       // label5
       // 
       label5.AutoSize = true;
-      label5.Location = new Point(9, 67);
+      label5.Location = new Point(29, 15);
       label5.Name = "label5";
-      label5.Size = new Size(42, 15);
+      label5.Size = new Size(29, 15);
       label5.TabIndex = 13;
-      label5.Text = "Owner";
+      label5.Text = "Dog";
       // 
-      // dgvWalks
+      // label4
       // 
-      dgvWalks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      dgvWalks.Location = new Point(12, 113);
-      dgvWalks.Name = "dgvWalks";
-      dgvWalks.Size = new Size(426, 150);
-      dgvWalks.TabIndex = 14;
+      label4.AutoSize = true;
+      label4.Location = new Point(5, 74);
+      label4.Name = "label4";
+      label4.Size = new Size(53, 15);
+      label4.TabIndex = 15;
+      label4.Text = "Duration";
       // 
-      // btnWalks
+      // label2
       // 
-      btnWalks.Location = new Point(12, 269);
-      btnWalks.Name = "btnWalks";
-      btnWalks.Size = new Size(102, 23);
-      btnWalks.TabIndex = 15;
-      btnWalks.Text = "Add Walks...";
-      btnWalks.UseVisualStyleBackColor = true;
-      btnWalks.Click += btnWalks_Click;
+      label2.AutoSize = true;
+      label2.Location = new Point(190, 74);
+      label2.Name = "label2";
+      label2.Size = new Size(85, 15);
+      label2.TabIndex = 16;
+      label2.Text = "hh:mm format";
       // 
-      // frmDog
+      // nudDuration
+      // 
+      nudDuration.Location = new Point(63, 70);
+      nudDuration.Name = "nudDuration";
+      nudDuration.Size = new Size(121, 23);
+      nudDuration.TabIndex = 17;
+      // 
+      // frmWalk
       // 
       AcceptButton = btnSave;
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(450, 334);
+      ClientSize = new Size(450, 193);
       ControlBox = false;
-      Controls.Add(btnWalks);
-      Controls.Add(dgvWalks);
+      Controls.Add(nudDuration);
+      Controls.Add(label2);
+      Controls.Add(label4);
       Controls.Add(label5);
-      Controls.Add(cmbOwner);
-      Controls.Add(dtpDOB);
+      Controls.Add(cmbDog);
+      Controls.Add(dtpWalkDate);
       Controls.Add(btnDelete);
       Controls.Add(btnClear);
-      Controls.Add(label4);
       Controls.Add(btnCancel);
       Controls.Add(btnSave);
       Controls.Add(label3);
-      Controls.Add(label2);
-      Controls.Add(txtBreed);
       Controls.Add(label1);
-      Controls.Add(txtName);
+      Controls.Add(txtNotes);
       FormBorderStyle = FormBorderStyle.FixedDialog;
-      Name = "frmDog";
+      Name = "frmWalk";
       ShowInTaskbar = false;
       StartPosition = FormStartPosition.CenterParent;
-      Text = "Dog";
-      ((System.ComponentModel.ISupportInitialize)dgvWalks).EndInit();
+      Text = "Walk";
+      ((System.ComponentModel.ISupportInitialize)nudDuration).EndInit();
       ResumeLayout(false);
       PerformLayout();
     }
 
     #endregion
 
-    private TextBox txtName;
+    private TextBox txtNotes;
     private Label label1;
-    private Label label2;
-    private TextBox txtBreed;
     private Label label3;
     private Button btnSave;
     private Button btnCancel;
-    private Label label4;
     private Button btnClear;
     private Button btnDelete;
-    private DateTimePicker dtpDOB;
-    private ComboBox cmbOwner;
+    private DateTimePicker dtpWalkDate;
+    private ComboBox cmbDog;
     private Label label5;
-    private DataGridView dgvWalks;
-    private Button btnWalks;
+    private Label label4;
+    private Label label2;
+    private NumericUpDown nudDuration;
   }
 }
