@@ -1,5 +1,6 @@
 ﻿namespace Dog.Core;
 
+using System.Diagnostics.CodeAnalysis;
 using Dog.Core.Services;
 using Dog.Core.Services.Interfaces;
 using Dog.Core.Validators;
@@ -8,6 +9,7 @@ using Dog.Domain.Models;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
+[ExcludeFromCodeCoverage]
 public static class ServicesRegistration
 {
   /// <summary>

@@ -3,6 +3,17 @@
 		<DataCollectors>
 			<DataCollector friendlyName="XPlat Code Coverage">
 				<Configuration>
+					<Format>cobertura</Format>
+					<ExcludeByFile>**/*Migrations/*.cs</ExcludeByFile>
+					<CodeCoverage>
+						<!-- Match the path of the source files in which each method is defined: -->
+						<Sources>
+							<Exclude>
+								<Source>.*\\Migrations\\.*</Source>
+								<Function>^Dog\.Infrastructure\.DataStore\.Migrations\..*</Function>
+							</Exclude>
+						</Sources>
+					</CodeCoverage>
 				</Configuration>
 			</DataCollector>
 		</DataCollectors>

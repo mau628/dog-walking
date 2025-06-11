@@ -7,7 +7,9 @@ if (Test-Path $testResultsPath) {
 }
 
 # Run the tests
-dotnet test --collect:"XPlat Code Coverage" --settings coverlet.runsettings
+# dotnet test --collect:"XPlat Code Coverage" --settings coverlet.runsettings
+# dotnet test /p:CollectCoverage=true -s .\coverlet.runsettings /p:ExcludeByFile="**/*Migrations/*.cs"
+dotnet test /p:CollectCoverage=true -s .\coverlet.runsettings
 
 # Get the latest test results directory, get directory name only, and remove the "TestResults\" prefix
 $latestTestResultsDir = Get-ChildItem -Path $testResultsPath -Directory | Sort-Object LastWriteTime -Descending | Select-Object -First 1 | ForEach-Object { $_.Name }

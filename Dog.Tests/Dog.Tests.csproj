@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Dog.Core\Dog.Core.csproj" />
     <ProjectReference Include="..\Dog.Domain\Dog.Domain.csproj" />
+    <ProjectReference Include="..\Dog.Infrastructure\Dog.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

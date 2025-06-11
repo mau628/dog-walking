@@ -1,11 +1,13 @@
 ﻿namespace Dog.Presentation;
 
+using System.Diagnostics.CodeAnalysis;
 using Dog.Domain;
 using Microsoft.Extensions.DependencyInjection;
 
 /// <summary>
 /// Factory for creating forms in the Dog application.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public class FormFactory : IFormFactory
 {
   private readonly IServiceScope _scope;

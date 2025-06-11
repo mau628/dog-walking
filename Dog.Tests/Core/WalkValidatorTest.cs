@@ -1,4 +1,4 @@
-namespace Dog.Tests;
+namespace Dog.Tests.Core;
 
 using System;
 using Dog.Core.Validators;

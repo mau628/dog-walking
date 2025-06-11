@@ -1,5 +1,6 @@
 ﻿namespace Dog.Infrastructure.DataStore;
 
+using System.Diagnostics.CodeAnalysis;
 using Dog.Domain;
 using Dog.Infrastructure.DataStore.Repositories;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 /// <summary>
 /// Registers the data store and its repositories.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public static class DataStoreRegistration
 {
   /// <summary>

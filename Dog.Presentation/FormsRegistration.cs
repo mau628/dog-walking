@@ -1,5 +1,6 @@
 ﻿namespace Dog.Presentation;
 
+using System.Diagnostics.CodeAnalysis;
 using Dog.Domain;
 using Dog.Presentation.Forms;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 /// Registers all forms in the Dog application.
 /// This class scans the assembly for types that implement the IBaseForm interface.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public static class FormsRegistration
 {
   /// <summary>

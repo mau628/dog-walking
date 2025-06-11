@@ -6,7 +6,7 @@ namespace Dog.Infrastructure.DataStore.Repositories;
 /// Generic repository interface for managing entities in the dog walking management system.
 /// </summary>
 /// <typeparam name="T">Type of the entity, must inherit from BaseEntity.</typeparam>
-internal class Repository<T> : Domain.IRepository<T> where T : Domain.BaseEntity
+public class Repository<T> : Domain.IRepository<T> where T : Domain.BaseEntity
 {
   private readonly DogContext _context;
   public Repository(DogContext context)

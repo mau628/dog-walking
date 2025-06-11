@@ -37,7 +37,7 @@ Create a Windows Forms application to manage client and dog information for a do
 * ✅ Create a GitHub repo that can be accessed by us. “Commit early, commit often”
 * ✅ Complete as many of the features as possible in the timeframe. There is no requirement to finish ALL features / optional items. It is better to focus on quality code and implementation than rushing and completing all items.
 * ✅ Use AI! If you need to, use AI to help you with specific areas. Keep in mind that AI doesn’t always produce the best results, and we wouldn’t expect the entire solution to be solely from AI.
-* ⏳ Include unit tests to verify the functionality of your code.
+* ✅ Include unit tests to verify the functionality of your code.
 * ✅ Document your code thoroughly to make it easier for others to understand and maintain.
 * ✅ Feel free to add any other features that are not on this list if you believe they will help or are useful.
 
@@ -48,6 +48,19 @@ Create a Windows Forms application to manage client and dog information for a do
 4. Access to `AppData/Local/dog-walking.db` file is required for the application to run.
 5. Apply the migrations to the database if it is not already set up. Check the Migrations section below for instructions.
 6. Press `F5` to run the application.
+
+## Run Unit Tests:
+1. Open the solution in Visual Studio.
+2. Navigate to the Test Explorer.
+3. Run all tests to verify the functionality of the application.
+
+### Run tests and check code coverage:
+1. Open PowerShell in the solution directory.
+2. Run the following command to execute tests and generate code coverage:
+    ```bash
+    .\run-tests.ps1
+    ```
+3. A browser window will open displaying the code coverage report.
 
 ## Project Structure:
 * **Dog.Core**: Contains the services and validation logic.

@@ -1,5 +1,6 @@
 ﻿namespace Dog.Runtime;
 
+using System.Diagnostics.CodeAnalysis;
 using Dog.Core;
 using Dog.Infrastructure.DataStore;
 using Dog.Presentation;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 /// <summary>
 /// Registers all components in the Dog application.
 /// </summary>
+[ExcludeFromCodeCoverage]
 internal static class ComponentRegistration
 {
   /// <summary>

@@ -1,10 +1,12 @@
-﻿using Dog.Domain;
+﻿namespace Dog.Presentation;
 
-namespace Dog.Presentation;
+using System.Diagnostics.CodeAnalysis;
+using Dog.Domain;
 
 /// <summary>
 /// Provides extension methods for binding data to various controls in a Windows Forms application.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public static class ControlsExtensions
 {
   /// <summary>

@@ -1,4 +1,4 @@
-namespace Dog.Tests;
+namespace Dog.Tests.Core;
 
 using Dog.Core.Validators;
 using Dog.Domain.Models;

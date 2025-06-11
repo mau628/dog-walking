@@ -1,5 +1,6 @@
 ﻿namespace Dog.Infrastructure.DataStore;
 
+using System.Diagnostics.CodeAnalysis;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,7 +8,8 @@ using Microsoft.EntityFrameworkCore;
 /// Represents the database context for the Dog application.
 /// This context manages the connection to the SQLite database and provides access to the DbSet properties for each model.
 /// </summary>
-internal class DogContext : DbContext
+[ExcludeFromCodeCoverage]
+public class DogContext : DbContext
 {
   /// <summary>
   /// Gets or sets the DbSet for the Dog model.
