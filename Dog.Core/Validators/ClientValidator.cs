@@ -3,6 +3,9 @@ using FluentValidation;
 
 namespace Dog.Core.Validators;
 
+/// <summary>
+/// Validator for the Client model.
+/// </summary>
 public class ClientValidator : AbstractValidator<Client>
 {
   public ClientValidator()

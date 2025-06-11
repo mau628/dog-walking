@@ -3,6 +3,9 @@
 using Dog.Domain.Models;
 using FluentValidation;
 
+/// <summary>
+/// Validator for the Walk model.
+/// </summary>
 public class WalkValidator : AbstractValidator<Walk>
 {
   public WalkValidator()

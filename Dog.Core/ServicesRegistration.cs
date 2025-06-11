@@ -10,6 +10,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 public static class ServicesRegistration
 {
+  /// <summary>
+  /// Registers all necessary services for the Dog application.
+  /// </summary>
+  /// <param name="services">The service collection to add services to.</param>
   public static void AddDogServices(this IServiceCollection services)
   {
     services.AddDataServices();

@@ -4,8 +4,15 @@ using Dog.Domain;
 using Dog.Infrastructure.DataStore.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
+/// <summary>
+/// Registers the data store and its repositories.
+/// </summary>
 public static class DataStoreRegistration
 {
+  /// <summary>
+  /// Registers the data store and its repositories in the service collection.
+  /// </summary>
+  /// <param name="services">The service collection to add services to.</param>
   public static void AddDataStore(this IServiceCollection services)
   {
     services.AddDbContext<DogContext>();
