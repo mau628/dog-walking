@@ -13,8 +13,8 @@ public static class ControlsExtensions
     grid.AllowUserToDeleteRows = false;
     grid.ShowEditingIcon = true;
     grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-    //grid.MultiSelect = true;
-    //grid.ReadOnly = true;
+    grid.MultiSelect = false;
+    grid.ReadOnly = true;
     grid.EditMode = DataGridViewEditMode.EditProgrammatically;
     grid.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
     grid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -47,11 +47,22 @@ public static class ControlsExtensions
       var row = new DataGridViewRow();
       foreach (var column in columns)
       {
-        var value = typeof(T).GetProperty(column.Key)?.GetValue(item, null)?.ToString() ?? string.Empty;
+        var prop = typeof(T).GetProperty(column.Key);
+        var value = prop?.GetValue(item, null)?.ToString() ?? string.Empty;
+        if (prop?.PropertyType == typeof(DateTime))
+        {
+          var dateValue = (DateTime?)prop.GetValue(item, null);
+          value = dateValue.HasValue ? dateValue.Value.ToShortDateString() : string.Empty;
+        }
+
+
         var cell = new DataGridViewTextBoxCell { Value = value };
         row.Cells.Add(cell);
       }
-      row.Cells.Add(new DataGridViewButtonCell { Value = "Details..." });
+      var buttonCell = new DataGridViewButtonCell { Value = "Details..." };
+      buttonCell.Style.BackColor = Color.LightBlue;
+      buttonCell.Style.Font = new Font(grid.Font, FontStyle.Bold);
+      row.Cells.Add(buttonCell);
 
       grid.Rows.Add(row);
     }

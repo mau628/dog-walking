@@ -50,7 +50,7 @@
       txtNotes.Multiline = true;
       txtNotes.Name = "txtNotes";
       txtNotes.Size = new Size(374, 46);
-      txtNotes.TabIndex = 0;
+      txtNotes.TabIndex = 3;
       // 
       // label1
       // 
@@ -76,7 +76,7 @@
       btnSave.Location = new Point(63, 161);
       btnSave.Name = "btnSave";
       btnSave.Size = new Size(75, 23);
-      btnSave.TabIndex = 6;
+      btnSave.TabIndex = 4;
       btnSave.Text = "Save";
       btnSave.UseVisualStyleBackColor = true;
       btnSave.Click += btnSave_Click;
@@ -87,7 +87,7 @@
       btnCancel.Location = new Point(306, 161);
       btnCancel.Name = "btnCancel";
       btnCancel.Size = new Size(75, 23);
-      btnCancel.TabIndex = 9;
+      btnCancel.TabIndex = 7;
       btnCancel.Text = "Cancel";
       btnCancel.UseVisualStyleBackColor = true;
       btnCancel.Click += btnCancel_Click;
@@ -98,7 +98,7 @@
       btnClear.Location = new Point(144, 161);
       btnClear.Name = "btnClear";
       btnClear.Size = new Size(75, 23);
-      btnClear.TabIndex = 7;
+      btnClear.TabIndex = 5;
       btnClear.Text = "Clear";
       btnClear.UseVisualStyleBackColor = true;
       btnClear.Click += btnClear_Click;
@@ -109,7 +109,7 @@
       btnDelete.Location = new Point(225, 161);
       btnDelete.Name = "btnDelete";
       btnDelete.Size = new Size(75, 23);
-      btnDelete.TabIndex = 8;
+      btnDelete.TabIndex = 6;
       btnDelete.Text = "Delete";
       btnDelete.UseVisualStyleBackColor = true;
       btnDelete.Click += btnDelete_Click;
@@ -119,7 +119,7 @@
       dtpWalkDate.Location = new Point(64, 41);
       dtpWalkDate.Name = "dtpWalkDate";
       dtpWalkDate.Size = new Size(239, 23);
-      dtpWalkDate.TabIndex = 11;
+      dtpWalkDate.TabIndex = 1;
       // 
       // cmbDog
       // 
@@ -128,7 +128,7 @@
       cmbDog.Location = new Point(64, 12);
       cmbDog.Name = "cmbDog";
       cmbDog.Size = new Size(374, 23);
-      cmbDog.TabIndex = 12;
+      cmbDog.TabIndex = 0;
       // 
       // label5
       // 
@@ -162,7 +162,7 @@
       nudDuration.Location = new Point(63, 70);
       nudDuration.Name = "nudDuration";
       nudDuration.Size = new Size(121, 23);
-      nudDuration.TabIndex = 17;
+      nudDuration.TabIndex = 2;
       // 
       // frmWalk
       // 

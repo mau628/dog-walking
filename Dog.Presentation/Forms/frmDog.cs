@@ -111,4 +111,20 @@ public partial class frmDog : Form, IBaseForm
   {
     _formFactory.Create<frmWalk>().ShowForm(this);
   }
+
+  private void dgvWalks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+  {
+    var senderGrid = (DataGridView)sender;
+
+    if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+        e.RowIndex >= 0)
+    {
+      Guid.TryParse(dgvWalks.Rows[e.RowIndex].Cells[nameof(Dog.Id)].Value.ToString(), out var id);
+
+      if (_formFactory.Create<frmWalk>().ShowForm(this, id))
+      {
+        BindData(id);
+      }
+    }
+  }
 }

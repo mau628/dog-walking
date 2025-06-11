@@ -63,5 +63,13 @@ namespace Dog.Presentation.Forms
         }
       }
     }
+
+    private void btnExit_Click(object sender, EventArgs e)
+    {
+      if (MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+      {
+        Application.Exit();
+      }
+    }
   }
 }

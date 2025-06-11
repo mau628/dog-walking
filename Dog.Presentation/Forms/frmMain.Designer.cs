@@ -29,14 +29,15 @@
     private void InitializeComponent()
     {
       btnClients = new Button();
-      btnDogs = new Button();
       dgvClients = new DataGridView();
+      btnExit = new Button();
       ((System.ComponentModel.ISupportInitialize)dgvClients).BeginInit();
       SuspendLayout();
       // 
       // btnClients
       // 
-      btnClients.Location = new Point(686, 217);
+      btnClients.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+      btnClients.Location = new Point(12, 422);
       btnClients.Name = "btnClients";
       btnClients.Size = new Size(102, 23);
       btnClients.TabIndex = 0;
@@ -44,35 +45,35 @@
       btnClients.UseVisualStyleBackColor = true;
       btnClients.Click += btnClients_Click;
       // 
-      // btnDogs
-      // 
-      btnDogs.Location = new Point(164, 288);
-      btnDogs.Name = "btnDogs";
-      btnDogs.Size = new Size(102, 23);
-      btnDogs.TabIndex = 1;
-      btnDogs.Text = "Add Dog...";
-      btnDogs.UseVisualStyleBackColor = true;
-      btnDogs.Click += btnDogs_Click;
-      // 
       // dgvClients
       // 
+      dgvClients.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
       dgvClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       dgvClients.Location = new Point(12, 12);
       dgvClients.Name = "dgvClients";
-      dgvClients.Size = new Size(776, 199);
-      dgvClients.TabIndex = 2;
+      dgvClients.Size = new Size(776, 404);
+      dgvClients.TabIndex = 1;
       dgvClients.CellContentClick += dgvClients_CellContentClick;
+      // 
+      // btnExit
+      // 
+      btnExit.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+      btnExit.Location = new Point(686, 422);
+      btnExit.Name = "btnExit";
+      btnExit.Size = new Size(102, 23);
+      btnExit.TabIndex = 2;
+      btnExit.Text = "EXIT";
+      btnExit.UseVisualStyleBackColor = true;
+      btnExit.Click += btnExit_Click;
       // 
       // frmMain
       // 
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(800, 450);
+      ClientSize = new Size(800, 457);
+      Controls.Add(btnExit);
       Controls.Add(dgvClients);
-      Controls.Add(btnDogs);
       Controls.Add(btnClients);
-      FormBorderStyle = FormBorderStyle.FixedSingle;
-      MaximizeBox = false;
       Name = "frmMain";
       StartPosition = FormStartPosition.CenterParent;
       Text = "Dog Walking";
@@ -83,7 +84,7 @@
     #endregion
 
     private Button btnClients;
-    private Button btnDogs;
     private DataGridView dgvClients;
+    private Button btnExit;
   }
 }

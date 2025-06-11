@@ -74,7 +74,7 @@
       txtPhone.Location = new Point(56, 35);
       txtPhone.Name = "txtPhone";
       txtPhone.Size = new Size(100, 23);
-      txtPhone.TabIndex = 2;
+      txtPhone.TabIndex = 1;
       // 
       // label3
       // 
@@ -90,7 +90,7 @@
       txtEmail.Location = new Point(204, 35);
       txtEmail.Name = "txtEmail";
       txtEmail.Size = new Size(234, 23);
-      txtEmail.TabIndex = 4;
+      txtEmail.TabIndex = 2;
       // 
       // btnSave
       // 
@@ -98,7 +98,7 @@
       btnSave.Location = new Point(66, 320);
       btnSave.Name = "btnSave";
       btnSave.Size = new Size(75, 23);
-      btnSave.TabIndex = 6;
+      btnSave.TabIndex = 3;
       btnSave.Text = "Save";
       btnSave.UseVisualStyleBackColor = true;
       btnSave.Click += btnSave_Click;
@@ -109,7 +109,7 @@
       btnCancel.Location = new Point(309, 320);
       btnCancel.Name = "btnCancel";
       btnCancel.Size = new Size(75, 23);
-      btnCancel.TabIndex = 9;
+      btnCancel.TabIndex = 6;
       btnCancel.Text = "Cancel";
       btnCancel.UseVisualStyleBackColor = true;
       btnCancel.Click += btnCancel_Click;
@@ -129,7 +129,7 @@
       btnClear.Location = new Point(147, 320);
       btnClear.Name = "btnClear";
       btnClear.Size = new Size(75, 23);
-      btnClear.TabIndex = 7;
+      btnClear.TabIndex = 4;
       btnClear.Text = "Clear";
       btnClear.UseVisualStyleBackColor = true;
       btnClear.Click += btnClear_Click;
@@ -140,7 +140,7 @@
       btnDelete.Location = new Point(228, 320);
       btnDelete.Name = "btnDelete";
       btnDelete.Size = new Size(75, 23);
-      btnDelete.TabIndex = 8;
+      btnDelete.TabIndex = 5;
       btnDelete.Text = "Delete";
       btnDelete.UseVisualStyleBackColor = true;
       btnDelete.Click += btnDelete_Click;
@@ -151,7 +151,7 @@
       dgvDogs.Location = new Point(12, 91);
       dgvDogs.Name = "dgvDogs";
       dgvDogs.Size = new Size(426, 176);
-      dgvDogs.TabIndex = 10;
+      dgvDogs.TabIndex = 8;
       dgvDogs.CellContentClick += dgvDogs_CellContentClick;
       // 
       // btnDogs
@@ -159,7 +159,7 @@
       btnDogs.Location = new Point(12, 273);
       btnDogs.Name = "btnDogs";
       btnDogs.Size = new Size(102, 23);
-      btnDogs.TabIndex = 11;
+      btnDogs.TabIndex = 7;
       btnDogs.Text = "Add Dog...";
       btnDogs.UseVisualStyleBackColor = true;
       btnDogs.Click += btnDogs_Click;

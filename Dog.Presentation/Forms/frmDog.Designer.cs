@@ -76,7 +76,7 @@
       txtBreed.Location = new Point(56, 35);
       txtBreed.Name = "txtBreed";
       txtBreed.Size = new Size(100, 23);
-      txtBreed.TabIndex = 2;
+      txtBreed.TabIndex = 1;
       // 
       // label3
       // 
@@ -93,7 +93,7 @@
       btnSave.Location = new Point(63, 302);
       btnSave.Name = "btnSave";
       btnSave.Size = new Size(75, 23);
-      btnSave.TabIndex = 6;
+      btnSave.TabIndex = 4;
       btnSave.Text = "Save";
       btnSave.UseVisualStyleBackColor = true;
       btnSave.Click += btnSave_Click;
@@ -104,7 +104,7 @@
       btnCancel.Location = new Point(306, 302);
       btnCancel.Name = "btnCancel";
       btnCancel.Size = new Size(75, 23);
-      btnCancel.TabIndex = 9;
+      btnCancel.TabIndex = 7;
       btnCancel.Text = "Cancel";
       btnCancel.UseVisualStyleBackColor = true;
       btnCancel.Click += btnCancel_Click;
@@ -124,7 +124,7 @@
       btnClear.Location = new Point(144, 302);
       btnClear.Name = "btnClear";
       btnClear.Size = new Size(75, 23);
-      btnClear.TabIndex = 7;
+      btnClear.TabIndex = 5;
       btnClear.Text = "Clear";
       btnClear.UseVisualStyleBackColor = true;
       btnClear.Click += btnClear_Click;
@@ -135,7 +135,7 @@
       btnDelete.Location = new Point(225, 302);
       btnDelete.Name = "btnDelete";
       btnDelete.Size = new Size(75, 23);
-      btnDelete.TabIndex = 8;
+      btnDelete.TabIndex = 6;
       btnDelete.Text = "Delete";
       btnDelete.UseVisualStyleBackColor = true;
       btnDelete.Click += btnDelete_Click;
@@ -146,7 +146,7 @@
       dtpDOB.Location = new Point(199, 35);
       dtpDOB.Name = "dtpDOB";
       dtpDOB.Size = new Size(239, 23);
-      dtpDOB.TabIndex = 11;
+      dtpDOB.TabIndex = 2;
       // 
       // cmbOwner
       // 
@@ -155,7 +155,7 @@
       cmbOwner.Location = new Point(56, 64);
       cmbOwner.Name = "cmbOwner";
       cmbOwner.Size = new Size(382, 23);
-      cmbOwner.TabIndex = 12;
+      cmbOwner.TabIndex = 3;
       // 
       // label5
       // 
@@ -172,14 +172,15 @@
       dgvWalks.Location = new Point(12, 113);
       dgvWalks.Name = "dgvWalks";
       dgvWalks.Size = new Size(426, 150);
-      dgvWalks.TabIndex = 14;
+      dgvWalks.TabIndex = 9;
+      dgvWalks.CellContentClick += dgvWalks_CellContentClick;
       // 
       // btnWalks
       // 
       btnWalks.Location = new Point(12, 269);
       btnWalks.Name = "btnWalks";
       btnWalks.Size = new Size(102, 23);
-      btnWalks.TabIndex = 15;
+      btnWalks.TabIndex = 8;
       btnWalks.Text = "Add Walks...";
       btnWalks.UseVisualStyleBackColor = true;
       btnWalks.Click += btnWalks_Click;
