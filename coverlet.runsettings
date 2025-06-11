@@ -1,0 +1,14 @@
+﻿<RunSettings>
+	<DataCollectionRunSettings>
+		<DataCollectors>
+			<DataCollector friendlyName="XPlat Code Coverage">
+				<Configuration>
+				</Configuration>
+			</DataCollector>
+		</DataCollectors>
+	</DataCollectionRunSettings>
+
+	<RunConfiguration>
+		<ResultsDirectory>.\TestResults</ResultsDirectory>
+	</RunConfiguration>
+</RunSettings>
