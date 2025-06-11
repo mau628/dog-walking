@@ -39,5 +39,6 @@ public static class ServicesRegistration
     services.AddScoped<IValidator<Client>, ClientValidator>();
     services.AddScoped<IValidator<Dog>, DogValidator>();
     services.AddScoped<IValidator<Walk>, WalkValidator>();
+    services.AddScoped<IValidator<User>, UserValidator>();
   }
 }

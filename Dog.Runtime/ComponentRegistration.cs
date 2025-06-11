@@ -23,7 +23,7 @@ internal static class ComponentRegistration
         {
           services.AddDataStore();
           services.AddDogServices();
-          services.AddForms();
+          services.AddPresentation();
         });
   }
 

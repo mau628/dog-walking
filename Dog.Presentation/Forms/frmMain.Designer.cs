@@ -75,7 +75,7 @@
       Controls.Add(dgvClients);
       Controls.Add(btnClients);
       Name = "frmMain";
-      StartPosition = FormStartPosition.CenterParent;
+      StartPosition = FormStartPosition.CenterScreen;
       Text = "Dog Walking";
       ((System.ComponentModel.ISupportInitialize)dgvClients).EndInit();
       ResumeLayout(false);

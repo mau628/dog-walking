@@ -41,6 +41,7 @@ namespace Dog.Presentation.Forms
 
     public bool ShowForm(object? owner, params object[] args)
     {
+      this.ShowDialog(owner as IWin32Window);
       return false;
     }
 

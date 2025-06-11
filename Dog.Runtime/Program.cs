@@ -18,6 +18,6 @@ internal static class Program
   {
     ApplicationConfiguration.Initialize();
     ServiceProvider = ComponentRegistration.CreateHostBuilder().Build().Services;
-    Application.Run(ServiceProvider.GetService<frmMain>()!);
+    Application.Run(ServiceProvider.GetService<frmLogin>()!);
   }
 }

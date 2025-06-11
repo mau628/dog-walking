@@ -1,8 +1,12 @@
 ﻿namespace Dog.Presentation;
 
 using System.Diagnostics.CodeAnalysis;
+using Dog.Core.Services;
+using Dog.Core.Services.Interfaces;
 using Dog.Domain;
+using Dog.Domain.Models;
 using Dog.Presentation.Forms;
+using Dog.Presentation.Mock;
 using Microsoft.Extensions.DependencyInjection;
 
 /// <summary>
@@ -16,7 +20,13 @@ public static class FormsRegistration
   /// Registers the forms in the service collection.
   /// </summary>
   /// <param name="services">The service collection to add forms to.</param>
-  public static void AddForms(this IServiceCollection services)
+  public static void AddPresentation(this IServiceCollection services)
+  {
+    services.AddForms();
+    services.AddMockedServices();
+  }
+
+  private static void AddForms(this IServiceCollection services)
   {
     services.AddScoped<IFormFactory, FormFactory>();
     //Add all forms
@@ -33,4 +43,11 @@ public static class FormsRegistration
       services.AddTransient(form);
     });
   }
+
+  private static void AddMockedServices(this IServiceCollection services)
+  {
+    services.AddScoped<IRepository<User>, UserRepository>();
+    services.AddScoped<IDataService<User>, DataService<User>>();
+  }
+
 }

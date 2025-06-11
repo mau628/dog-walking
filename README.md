@@ -23,7 +23,7 @@ Create a Windows Forms application to manage client and dog information for a do
     * ✅ Include an area to retrieve saved entries.
     * 🚫 Implement search functionality to find specific entries.
     * ✅ Include error handling for unexpected inputs.
-    * 🚫 Have a login flow.
+    * ✅ Have a login flow.
     * ✅ Allow for adding a dog walk for a client that records information about the event.
     * ✅ Use validation messages where appropriate.
 
@@ -48,6 +48,18 @@ Create a Windows Forms application to manage client and dog information for a do
 4. Access to `AppData/Local/dog-walking.db` file is required for the application to run.
 5. Apply the migrations to the database if it is not already set up. Check the Migrations section below for instructions.
 6. Press `F5` to run the application.
+7. The application should start and ask for username and password.
+    * For mocking purposes, any username and password can be used to log in.
+    * Users are stored in-memory, so they will not persist after the application is closed.
+
+### Workflow:
+1. **Add Client**: Click on the "Add Client" button, fill in the client details, then click "Save".
+    * Client window will be be closed to see the changes in the main window.
+    * Reopen the client window to be able to add a dog for the client.
+2. **Add Dog**: Fill in the dog details and select the owner from the dropdown, then click "Save".
+    * Dog window will be closed to see the changes in the main window.
+    * Reopen the client window to be able to add a walk for the dog.
+3. **Add Walk**: Select a dog, fill in the walk details, then click "Save".
 
 ## Run Unit Tests:
 1. Open the solution in Visual Studio.
@@ -79,7 +91,10 @@ To update the database the first time:
 * Run: `dotnet ef database update --project Dog.Infrastructure`
 
 ## TODO's:
+* Refactor the code to allow child record updates without needing to reopen the form.
 * Refactor the grids to refresh on data change.
 * When adding a new dog, the Dog form should already have the current Owner selected.
 * Add pagination to the grids.
 * Add a search bar to the grids.
+* Add user authentication flow.
+* Add a settings page to configure the database connection string.
