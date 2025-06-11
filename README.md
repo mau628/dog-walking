@@ -21,7 +21,7 @@ Create a Windows Forms application to manage client and dog information for a do
     * ✅ Set up a README file in your GitHub repo with instructions on how to run the application.
 4. Useful Features:
     * ✅ Include an area to retrieve saved entries.
-    * 🚫 Implement search functionality to find specific entries.
+    * ✅ Implement search functionality to find specific entries.
     * ✅ Include error handling for unexpected inputs.
     * ✅ Have a login flow.
     * ✅ Allow for adding a dog walk for a client that records information about the event.
@@ -98,3 +98,4 @@ To update the database the first time:
 * Add a search bar to the grids.
 * Add user authentication flow.
 * Add a settings page to configure the database connection string.
+* Enhance Search functionality to allow to edit any record from the search results and use more advanced search options.

@@ -31,6 +31,7 @@
       btnClients = new Button();
       dgvClients = new DataGridView();
       btnExit = new Button();
+      btnSearch = new Button();
       ((System.ComponentModel.ISupportInitialize)dgvClients).BeginInit();
       SuspendLayout();
       // 
@@ -66,11 +67,23 @@
       btnExit.UseVisualStyleBackColor = true;
       btnExit.Click += btnExit_Click;
       // 
+      // btnSearch
+      // 
+      btnSearch.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+      btnSearch.Location = new Point(344, 422);
+      btnSearch.Name = "btnSearch";
+      btnSearch.Size = new Size(102, 23);
+      btnSearch.TabIndex = 3;
+      btnSearch.Text = "Search...";
+      btnSearch.UseVisualStyleBackColor = true;
+      btnSearch.Click += btnSearch_Click;
+      // 
       // frmMain
       // 
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(800, 457);
+      Controls.Add(btnSearch);
       Controls.Add(btnExit);
       Controls.Add(dgvClients);
       Controls.Add(btnClients);
@@ -86,5 +99,6 @@
     private Button btnClients;
     private DataGridView dgvClients;
     private Button btnExit;
+    private Button btnSearch;
   }
 }

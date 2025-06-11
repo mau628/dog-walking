@@ -16,7 +16,7 @@ public static class ControlsExtensions
   /// <param name="grid">The DataGridView control to bind the data to.</param>
   /// <param name="data">The collection of data items to bind.</param>
   /// <param name="columns">A dictionary mapping property names to column headers.</param>
-  public static void BindData<T>(this DataGridView grid, ICollection<T> data, IDictionary<string, string> columns)
+  public static void BindData<T>(this DataGridView grid, ICollection<T> data, IDictionary<string, string> columns, bool showDetailsButton = true)
   {
     grid.Columns.Clear();
     grid.Rows.Clear();
@@ -46,14 +46,17 @@ public static class ControlsExtensions
         Visible = column.Key != nameof(BaseEntity.Id)
       });
     }
-    grid.Columns.Add(new DataGridViewButtonColumn
+    if (showDetailsButton)
     {
-      Name = "Actions",
-      HeaderText = "Actions",
-      Text = "Details...",
-      UseColumnTextForButtonValue = true,
-      Width = 100
-    });
+      grid.Columns.Add(new DataGridViewButtonColumn
+      {
+        Name = "Actions",
+        HeaderText = "Actions",
+        Text = "Details...",
+        UseColumnTextForButtonValue = true,
+        Width = 100
+      });
+    }
 
     foreach (var item in data)
     {
@@ -72,10 +75,13 @@ public static class ControlsExtensions
         var cell = new DataGridViewTextBoxCell { Value = value };
         row.Cells.Add(cell);
       }
-      var buttonCell = new DataGridViewButtonCell { Value = "Details..." };
-      buttonCell.Style.BackColor = Color.LightBlue;
-      buttonCell.Style.Font = new Font(grid.Font, FontStyle.Bold);
-      row.Cells.Add(buttonCell);
+      if (showDetailsButton)
+      {
+        var buttonCell = new DataGridViewButtonCell { Value = "Details..." };
+        buttonCell.Style.BackColor = Color.LightBlue;
+        buttonCell.Style.Font = new Font(grid.Font, FontStyle.Bold);
+        row.Cells.Add(buttonCell);
+      }
 
       grid.Rows.Add(row);
     }

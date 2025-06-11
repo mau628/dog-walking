@@ -72,5 +72,10 @@ namespace Dog.Presentation.Forms
         Application.Exit();
       }
     }
+
+    private void btnSearch_Click(object sender, EventArgs e)
+    {
+      _formFactory.Create<frmSearch>().ShowForm(this);
+    }
   }
 }
