@@ -28,8 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder2 = new XPTable.Models.DataSourceColumnBinder();
-      XPTable.Renderers.DragDropRenderer dragDropRenderer2 = new XPTable.Renderers.DragDropRenderer();
       txtName = new TextBox();
       label1 = new Label();
       label2 = new Label();
@@ -38,9 +36,11 @@
       txtEmail = new TextBox();
       btnSave = new Button();
       btnCancel = new Button();
-      tblDogs = new XPTable.Models.Table();
       label4 = new Label();
-      ((System.ComponentModel.ISupportInitialize)tblDogs).BeginInit();
+      btnClear = new Button();
+      btnDelete = new Button();
+      dgvDogs = new DataGridView();
+      ((System.ComponentModel.ISupportInitialize)dgvDogs).BeginInit();
       SuspendLayout();
       // 
       // txtName
@@ -93,7 +93,8 @@
       // 
       // btnSave
       // 
-      btnSave.Location = new Point(140, 322);
+      btnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+      btnSave.Location = new Point(66, 273);
       btnSave.Name = "btnSave";
       btnSave.Size = new Size(75, 23);
       btnSave.TabIndex = 6;
@@ -103,28 +104,14 @@
       // 
       // btnCancel
       // 
-      btnCancel.Location = new Point(221, 322);
+      btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+      btnCancel.Location = new Point(309, 273);
       btnCancel.Name = "btnCancel";
       btnCancel.Size = new Size(75, 23);
-      btnCancel.TabIndex = 7;
+      btnCancel.TabIndex = 9;
       btnCancel.Text = "Cancel";
       btnCancel.UseVisualStyleBackColor = true;
       btnCancel.Click += btnCancel_Click;
-      // 
-      // tblDogs
-      // 
-      tblDogs.BorderColor = Color.Black;
-      tblDogs.DataMember = null;
-      tblDogs.DataSourceColumnBinder = dataSourceColumnBinder2;
-      dragDropRenderer2.ForeColor = Color.Red;
-      tblDogs.DragDropRenderer = dragDropRenderer2;
-      tblDogs.GridLinesContrainedToData = false;
-      tblDogs.Location = new Point(12, 91);
-      tblDogs.Name = "tblDogs";
-      tblDogs.Size = new Size(426, 150);
-      tblDogs.TabIndex = 8;
-      tblDogs.Text = "table1";
-      tblDogs.UnfocusedBorderColor = Color.Black;
       // 
       // label4
       // 
@@ -135,15 +122,48 @@
       label4.TabIndex = 9;
       label4.Text = "Owned Dogs";
       // 
+      // btnClear
+      // 
+      btnClear.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+      btnClear.Location = new Point(147, 273);
+      btnClear.Name = "btnClear";
+      btnClear.Size = new Size(75, 23);
+      btnClear.TabIndex = 7;
+      btnClear.Text = "Clear";
+      btnClear.UseVisualStyleBackColor = true;
+      btnClear.Click += btnClear_Click;
+      // 
+      // btnDelete
+      // 
+      btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+      btnDelete.Location = new Point(228, 273);
+      btnDelete.Name = "btnDelete";
+      btnDelete.Size = new Size(75, 23);
+      btnDelete.TabIndex = 8;
+      btnDelete.Text = "Delete";
+      btnDelete.UseVisualStyleBackColor = true;
+      btnDelete.Click += btnDelete_Click;
+      // 
+      // dgvDogs
+      // 
+      dgvDogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      dgvDogs.Location = new Point(12, 91);
+      dgvDogs.Name = "dgvDogs";
+      dgvDogs.Size = new Size(426, 176);
+      dgvDogs.TabIndex = 10;
+      dgvDogs.CellContentClick += dgvDogs_CellContentClick;
+      // 
       // frmClient
       // 
       AcceptButton = btnSave;
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(450, 357);
+      ClientSize = new Size(450, 305);
       ControlBox = false;
+      Controls.Add(dgvDogs);
+      Controls.Add(btnDelete);
+      Controls.Add(btnClear);
       Controls.Add(label4);
-      Controls.Add(tblDogs);
       Controls.Add(btnCancel);
       Controls.Add(btnSave);
       Controls.Add(label3);
@@ -157,7 +177,7 @@
       ShowInTaskbar = false;
       StartPosition = FormStartPosition.CenterParent;
       Text = "Client";
-      ((System.ComponentModel.ISupportInitialize)tblDogs).EndInit();
+      ((System.ComponentModel.ISupportInitialize)dgvDogs).EndInit();
       ResumeLayout(false);
       PerformLayout();
     }
@@ -172,7 +192,9 @@
     private TextBox txtEmail;
     private Button btnSave;
     private Button btnCancel;
-    private XPTable.Models.Table tblDogs;
     private Label label4;
+    private Button btnClear;
+    private Button btnDelete;
+    private DataGridView dgvDogs;
   }
 }

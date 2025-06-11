@@ -11,12 +11,19 @@ public static class ServicesRegistration
 {
   public static void AddDogServices(this IServiceCollection services)
   {
-    services.AddScoped<IClientService, ClientService>();
+    services.AddDataServices();
     services.AddValidators();
+  }
+
+  private static void AddDataServices(this IServiceCollection services)
+  {
+    services.AddScoped<IDataService<Client>, DataService<Client>>();
+    services.AddScoped<IDataService<Dog>, DataService<Dog>>();
   }
 
   private static void AddValidators(this IServiceCollection services)
   {
     services.AddScoped<IValidator<Client>, ClientValidator>();
+    services.AddScoped<IValidator<Dog>, DogValidator>();
   }
 }

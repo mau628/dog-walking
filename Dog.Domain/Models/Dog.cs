@@ -3,7 +3,7 @@ public class Dog : BaseEntity
 {
   public string Name { get; set; } = string.Empty;
   public string Breed { get; set; } = string.Empty;
-  public DateTime DateOfBirth { get; set; }
+  public DateTime DateOfBirth { get; set; } = DateTime.Now;
   public virtual Client Owner { get; set; } = new Client();
   public virtual ICollection<Walk> Walks { get; set; } = new List<Walk>();
 }

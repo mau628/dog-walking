@@ -1,6 +1,8 @@
-﻿namespace Dog.Infrastructure.DataStore.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
 
-internal class Repository<TEntity> : Domain.IRepository<TEntity> where TEntity : Domain.BaseEntity
+namespace Dog.Infrastructure.DataStore.Repositories;
+
+internal class Repository<T> : Domain.IRepository<T> where T : Domain.BaseEntity
 {
   private readonly DogContext _context;
   public Repository(DogContext context)
@@ -8,7 +10,7 @@ internal class Repository<TEntity> : Domain.IRepository<TEntity> where TEntity :
     _context = context;
   }
 
-  public void Add(TEntity entity)
+  public T Add(T entity)
   {
     if (entity == null)
     {
@@ -17,49 +19,47 @@ internal class Repository<TEntity> : Domain.IRepository<TEntity> where TEntity :
     entity.Id = new Guid();
     entity.CreatedAt = DateTime.UtcNow;
 
-    _context.Set<TEntity>().Add(entity);
+    var result = _context.Set<T>().Add(entity);
     _context.SaveChanges();
+    return result.Entity;
   }
 
-  public void Edit(TEntity entity)
+  public T Edit(T entity)
   {
     if (entity == null)
     {
       throw new ArgumentNullException(nameof(entity), "Entity cannot be null");
     }
 
-    _context.Set<TEntity>().Update(entity);
+    var result = _context.Set<T>().Update(entity);
     _context.SaveChanges();
+    return result.Entity;
   }
 
-  public void Delete(TEntity entity)
+  public void Delete(T entity)
   {
     if (entity == null)
     {
       throw new ArgumentNullException(nameof(entity), "Entity cannot be null");
     }
 
-    _context.Set<TEntity>().Remove(entity);
+    _context.Set<T>().Remove(entity);
     _context.SaveChanges();
   }
 
-  public TEntity? Find(Guid id)
+  public T? Find(Guid id)
   {
     if (id == default)
     {
       return null;
     }
 
-    return _context.Set<TEntity>().Find(id);
+    return _context.Set<T>().Find(id);
   }
 
-  public IQueryable<TEntity> Filter(Func<TEntity, bool> filter)
+  public IQueryable<T> GetFiltered(Func<T, bool> filter)
   {
-    return _context.Set<TEntity>().Where(filter).AsQueryable();
+    return _context.Set<T>().AsNoTracking().Where(filter).AsQueryable();
   }
 
-  public IQueryable<TEntity> GetAll()
-  {
-    return _context.Set<TEntity>().AsQueryable();
-  }
 }

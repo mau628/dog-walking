@@ -1,12 +1,10 @@
 ﻿namespace Dog.Domain;
 
-public interface IRepository<TEntity>
-      where TEntity : BaseEntity
+public interface IRepository<T> where T : BaseEntity
 {
-  void Add(TEntity entity);
-  void Edit(TEntity entity);
-  void Delete(TEntity entity);
-  TEntity? Find(Guid id);
-  IQueryable<TEntity> Filter(Func<TEntity, bool> filter);
-  IQueryable<TEntity> GetAll();
+  T Add(T entity);
+  T Edit(T entity);
+  void Delete(T entity);
+  T? Find(Guid id);
+  IQueryable<T> GetFiltered(Func<T, bool> filter);
 }
